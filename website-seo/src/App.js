@@ -4,48 +4,37 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { countSelector } from "./redux/selector";
 import dataSlice from "./redux/dataSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { link_menu } from "./common/link_menu";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import NotFoundPage from "./page/not_found_page/NotFoundPage";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="*" element={<Navigate to="/404" />} />
-      <Route path="/404" element={<NotFoundPage />} />
-    </Routes>
-  );
-}
-
-function HomePage() {
-  const dispatch = useDispatch();
-  const count = useSelector(countSelector);
-  console.log("count " + count);
-
-  return (
     <>
-      <h1>Home PAGE</h1>
-      <div>Count: {count}</div>
-      <div>
-        <button
-          onClick={() => {
-            dispatch(dataSlice.actions.incre());
-          }}
-        >
-          incre
-        </button>
-        <button
-          onClick={() => {
-            dispatch(dataSlice.actions.decre());
-          }}
-        >
-          decre
-        </button>
+      <Header></Header>
+      <div id="page">
+        <Routes>
+          {link_menu.map((item, index) => {
+            if (item.dropdown) {
+              return (
+                <Route
+                  path={`${item.link}/${item.components.link}`}
+                  element={item.components.component}
+                />
+              );
+            } else {
+              return <Route path={item.link} element={item.component} />;
+            }
+          })}
+          {/* <Route path="*" element={<Navigate to="/404" />} />
+          <Route path="/404" element={<NotFoundPage />} /> */}
+        </Routes>
       </div>
+
+      <Footer></Footer>
     </>
   );
-}
-
-function NotFoundPage() {
-  return <h1>404 Not Found</h1>;
 }
 
 export default App;
