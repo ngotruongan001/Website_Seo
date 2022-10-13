@@ -1,19 +1,11 @@
-import Container from "react-bootstrap/Container";
-import { useState } from "react";
-import "./style.css";
-const arrayCard = [
-  {
-    image: "http://thicongnhadanang.vn/wp-content/uploads/2020/10/TAM.jpg",
-    title: "Nhà Minh Anh",
-    discription: "Quãng Ngãi",
-  },
-];
-export default function VideoPage(props) {
+import Container from "react-bootstrap/esm/Container";
+
+export default function NewPage2(props) {
   return (
     <Container>
       <div className="body-video">
         <div class="grid-container">
-          {[0, 1, 2, 3, 4].map((e, index) => {
+          {[0, 1, 2].map((e, index) => {
             return (
               <div key={e} className="card-video grid-item">
                 <div className="card-video-image">

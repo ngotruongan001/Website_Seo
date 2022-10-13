@@ -8,6 +8,7 @@ import { link_menu } from "./common/link_menu";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import NotFoundPage from "./page/not_found_page/NotFoundPage";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -18,13 +19,22 @@ function App() {
           {link_menu.map((item, index) => {
             if (item.dropdown) {
               return (
-                <Route
-                  path={`${item.link}/${item.components.link}`}
-                  element={item.components.component}
-                />
+                <>
+                  {item.components.map((e, i) => {
+                    return (
+                      <Route
+                        key={i}
+                        path={`${item.link}${e.link}`}
+                        element={e.component}
+                      />
+                    );
+                  })}
+                </>
               );
             } else {
-              return <Route path={item.link} element={item.component} />;
+              return (
+                <Route key={index} path={item.link} element={item.component} />
+              );
             }
           })}
           {/* <Route path="*" element={<Navigate to="/404" />} />

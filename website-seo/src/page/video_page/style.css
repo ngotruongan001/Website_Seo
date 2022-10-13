@@ -1,0 +1,49 @@
+.body-video {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+.card-video {
+  height: 300px;
+}
+.card-video .card-video-image {
+  width: 100%;
+  height: 250px;
+}
+
+.card-video-image img.image-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.card-video-content {
+  height: auto;
+}
+
+.card-video-content .card-video-title {
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  padding: 0.2em 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.card-video-content .card-video-title:hover {
+  color: green;
+}
+.card-video-content .card-video-discription {
+  font-size: 16px;
+  text-align: center;
+  color: white;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.card-video {
+  margin-bottom: 20px;
+}

@@ -1,86 +1,97 @@
 import { Link } from "react-router-dom";
 import { link_menu } from "../../common/link_menu";
 import { useState } from "react";
-export default function Header(props) {
-  const [indexActive, setIndexActive] = useState(0);
-  console.log(indexActive);
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
-  const handleSetIndexActive = (index) => {
-    setIndexActive(index);
+export default function Header(props) {
+  const [active, setActive] = useState(1);
+
+  const handleUpdateSetActive = (index) => {
+    setActive(index);
   };
+
   return (
-    <header id="header" className="fixed-top">
-      <div className="container d-flex align-items-center">
-        <h1 className="logo me-auto">
-          <a href="index.html">LOGO</a>
-        </h1>
-        <nav id="navbar" className="navbar">
-          <ul>
-            {link_menu.map((item, index) => {
-              if (item.dropdown) {
-                return (
-                  <li className="dropdown">
-                    <Link
-                      className={`nav-link scrollto ${
-                        index == indexActive ? "active" : ""
-                      }`}
-                      to={`${item.link}/${item.components[0].link}`}
-                      onClick={() => {
-                        handleSetIndexActive(index);
-                      }}
+    <Navbar
+      style={{ background: "black" }}
+      variant="dark"
+      expand={`lg`}
+      className="mb-3"
+    >
+      <Container>
+        <Navbar.Brand>
+          <Link to="/">
+            <img
+              className="logo"
+              src="http://thicongnhadanang.vn/wp-content/uploads/2020/10/logo-chính-thức.png"
+            />
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
+        <Navbar.Offcanvas
+          id={`offcanvasNavbar-expand-lg`}
+          aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
+          placement="end"
+        >
+          <Offcanvas.Header closeButton></Offcanvas.Header>
+          <Offcanvas.Body>
+            <Nav className="justify-content-end flex-grow-1 pe-3">
+              {link_menu.map((item, index) => {
+                if (item.dropdown) {
+                  return (
+                    <NavDropdown
+                      title={item.content}
+                      id={`offcanvasNavbarDropdown-expand-lg`}
                     >
-                      {item.content} <i className="bi bi-chevron-down"></i>
-                    </Link>
-                    <ul>
-                      {item.components.map((e, ind) => {
+                      {item.components.map((e, i) => {
                         return (
-                          <li>
+                          <NavDropdown.Item>
                             <Link
-                              className={`nav-link scrollto ${
-                                index == indexActive ? "active" : ""
-                              }`}
-                              to={`${item.link}/${e.link}`}
+                              to={`${item.link}${e.link}`}
+                              style={{ color: "black", display: "block" }}
                               onClick={() => {
-                                handleSetIndexActive(index);
+                                handleUpdateSetActive(index);
                               }}
                             >
                               {e.content}
                             </Link>
-                          </li>
+                          </NavDropdown.Item>
                         );
                       })}
-                    </ul>
-                  </li>
-                );
-              } else {
-                return (
-                  <li>
-                    <Link
-                      className={`nav-link scrollto ${
-                        index == indexActive ? "active" : ""
-                      }`}
-                      to={item.link}
-                      onClick={() => {
-                        handleSetIndexActive(index);
-                      }}
+                    </NavDropdown>
+                  );
+                } else {
+                  return (
+                    <Nav.Link
+                      className={
+                        active == index ? "link-menu active" : "link-menu"
+                      }
                     >
-                      {item.content}
-                    </Link>
-                  </li>
-                );
-              }
-            })}
-
-            {/* 
-            <li>
-              <a className="getstarted scrollto" href="#about">
-                Get Started
-              </a>
-            </li> */}
-          </ul>
-          <i className="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-      </div>
-    </header>
+                      <Link
+                        onClick={() => {
+                          handleUpdateSetActive(index);
+                        }}
+                        className="link-menu"
+                        style={{
+                          color: `${active == index ? "green" : "white"}`,
+                          display: "block",
+                        }}
+                        to={`${item.link}`}
+                      >
+                        {item.content}
+                      </Link>
+                    </Nav.Link>
+                  );
+                }
+              })}
+            </Nav>
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
+      </Container>
+    </Navbar>
   );
 }

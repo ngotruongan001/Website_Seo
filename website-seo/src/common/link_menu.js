@@ -1,22 +1,14 @@
 import HomePage from "../page/home_page/HomePage";
-
-function BangGia() {
-  return <h1>Bảng Giá</h1>;
-}
-
-function GioiThieu() {
-  return <h1>Giới thiệu</h1>;
-}
-
-function Video() {
-  return <h1>Video</h1>;
-}
-
+import IntroducePage from "../page/introduce_page/IntroducePage";
+import VideoPage from "../page/video_page/VideoPage";
+import ConstructionPage from "../page/construction_page/ConstructionPage";
+import NewPage2 from "../page/news_page/NewsPage2";
+import NewPage1 from "../page/news_page/NewsPage1";
 const link_menu = [
   {
     content: "Giới thiệu",
     link: "/gioi-thieu",
-    component: <GioiThieu />,
+    component: <IntroducePage />,
     dropdown: false,
   },
   {
@@ -28,19 +20,19 @@ const link_menu = [
   {
     content: "Video",
     link: "/video",
-    component: <Video />,
+    component: <VideoPage />,
     dropdown: false,
   },
   {
     content: "Thi công",
     link: "/thi-cong",
-    component: <HomePage />,
+    component: <ConstructionPage />,
     dropdown: false,
   },
   {
     content: "Bảng giá",
     link: "/bao-gia",
-    component: <BangGia />,
+    component: <HomePage />,
     dropdown: false,
   },
   {
@@ -50,12 +42,12 @@ const link_menu = [
       {
         content: "Tin công ty",
         link: "/tuyen-dung",
-        component: <HomePage />,
+        component: <NewPage1 />,
       },
       {
         content: "Khuyến mãi - thông báo",
         link: "/khuyen-mai",
-        component: <HomePage />,
+        component: <NewPage2 />,
       },
     ],
     dropdown: true,
