@@ -1,5 +1,7 @@
 import Container from "react-bootstrap/Container";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import CardProject from "../../components/card_project/CardProject";
 const array = [
   {
     title: "Biệt thự",
@@ -261,17 +263,12 @@ export default function HomePage(props) {
       <div className="body-duan">
         {array[active].arrayCard.map((e, index) => {
           return (
-            <div className="card-duan" key={index}>
-              <div className="card-image">
-                <img
-                  src={e.image}
-                  alt={`${e.title}${e.address ? `- ${e.address}` : ""}`}
-                />
-              </div>
-              <div className="card-title">
-                <h6>{`${e.title}${e.address ? `- ${e.address}` : ""}`}</h6>
-              </div>
-            </div>
+            <CardProject
+              key={index}
+              image={e.image}
+              title={e.title}
+              address={e.address}
+            />
           );
         })}
       </div>

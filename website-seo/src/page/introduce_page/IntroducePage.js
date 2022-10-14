@@ -87,8 +87,8 @@ export default function IntroducePage(props) {
     setActive(index);
   };
   return (
-    <div>
-      <Container className="mx-auto my-3">
+    <>
+      <Container className="mx-auto my-3 menu-top">
         <div className="title-mess">
           <ul className="ul-menu-title">
             {array.map((item, index) => {
@@ -108,6 +108,6 @@ export default function IntroducePage(props) {
         </div>
       </Container>
       {array[active].component}
-    </div>
+    </>
   );
 }

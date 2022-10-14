@@ -1,0 +1,59 @@
+.contact-container {
+  height: auto;
+  background-color: white;
+}
+
+.info-company {
+  text-align: center;
+  background-color: black;
+  color: #fff;
+}
+
+.info-company a {
+  background-color: #9f9fa0;
+  padding: 5px;
+  color: white;
+}
+
+.info-company h4 {
+  padding-top: 10px;
+}
+
+.hotline {
+  padding: 10px 0 0 0;
+  font-size: 20px;
+}
+.hotline-phone {
+  color: red;
+  font-size: 26px;
+  font-weight: 500;
+}
+.form-contact {
+  background-color: rgb(244, 244, 244);
+}
+.form-contact h5 {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.icons {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+
+.contacts h5 {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.icons .icon-contact {
+  height: 60px;
+  width: 60px;
+  border-radius: 6px;
+  background-color: #9f9fa0;
+  cursor: pointer;
+}

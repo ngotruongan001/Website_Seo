@@ -4,49 +4,51 @@ import VideoPage from "../page/video_page/VideoPage";
 import ConstructionPage from "../page/construction_page/ConstructionPage";
 import NewPage2 from "../page/news_page/NewsPage2";
 import NewPage1 from "../page/news_page/NewsPage1";
+import ContactPage from "../page/contact_page/ContactPage";
+import CostPage from "../page/cost_page/CostPage";
 const link_menu = [
   {
     content: "Giới thiệu",
-    link: "/gioi-thieu",
+    link: "gioi-thieu",
     component: <IntroducePage />,
     dropdown: false,
   },
   {
     content: "Dự án",
-    link: "/",
+    link: "",
     component: <HomePage />,
     dropdown: false,
   },
   {
     content: "Video",
-    link: "/video",
+    link: "video",
     component: <VideoPage />,
     dropdown: false,
   },
   {
     content: "Thi công",
-    link: "/thi-cong",
+    link: "thi-cong",
     component: <ConstructionPage />,
     dropdown: false,
   },
   {
     content: "Bảng giá",
-    link: "/bao-gia",
-    component: <HomePage />,
+    link: "bao-gia",
+    component: <CostPage />,
     dropdown: false,
   },
   {
     content: "Tin tức",
-    link: "/tin-tuc",
+    link: "tin-tuc",
     components: [
       {
         content: "Tin công ty",
-        link: "/tuyen-dung",
+        link: "tuyen-dung",
         component: <NewPage1 />,
       },
       {
         content: "Khuyến mãi - thông báo",
-        link: "/khuyen-mai",
+        link: "khuyen-mai",
         component: <NewPage2 />,
       },
     ],
@@ -54,8 +56,8 @@ const link_menu = [
   },
   {
     content: "Liên hệ",
-    link: "/lien-he",
-    component: <HomePage />,
+    link: "lien-he",
+    component: <ContactPage />,
     dropdown: false,
   },
 ];

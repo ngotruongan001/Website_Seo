@@ -23,7 +23,7 @@ img.logo {
   object-fit: contain;
 }
 
-.active {
+.link-menu.active {
   border: 2px solid green;
   transition: all 0.5 ease;
 }
@@ -125,5 +125,56 @@ a.active.nav-link {
 @media only screen and (max-width: 990px) {
   .link-menu {
     color: #000 !important;
+  }
+}
+
+a#callnowbutton {
+  width: 70px;
+  height: 70px;
+  background-color: green;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  a#callnowbutton {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .menu-top {
+    height: auto !important;
+  }
+  .title-mess {
+    height: auto;
+  }
+  .title-mess ul.ul-menu-title {
+    flex-wrap: wrap;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .title-mess ul.ul-menu-title li.li-menu-title {
+    width: 50%;
+    color: black;
+    background-color: greenyellow;
+    /* padding: 0; */
+    margin: 0;
+    text-align: center;
+    border: 5px solid black;
+  }
+  .title-mess ul.ul-menu-title li.li-menu-title:hover {
+    color: white;
+  }
+
+  .title-mess ul.ul-menu-title li.li-menu-title.active {
+    border: 5px solid black;
+    border-bottom: none;
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
   }
 }

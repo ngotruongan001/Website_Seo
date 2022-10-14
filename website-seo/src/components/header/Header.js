@@ -7,13 +7,30 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-
+import { MenuContext } from "../../contexts/MenuContext";
+import { useContext, useLayoutEffect } from "react";
 export default function Header(props) {
-  const [active, setActive] = useState(1);
-
+  // const [active, setActive] = useState(1);
+  const context = useContext(MenuContext);
+  console.log(context.index);
   const handleUpdateSetActive = (index) => {
-    setActive(index);
+    context.toggleSetIndex(index);
   };
+
+  useLayoutEffect(() => {
+    const pathTag = window.location.href.split("/");
+    console.log(pathTag);
+    const path = pathTag[pathTag.length - 1];
+    if (path == "") {
+      handleUpdateSetActive(1);
+    } else {
+      link_menu.filter((item, index) => {
+        if (item.link == path) {
+          handleUpdateSetActive(index);
+        }
+      });
+    }
+  }, []);
 
   return (
     <Navbar
@@ -51,7 +68,7 @@ export default function Header(props) {
                         return (
                           <NavDropdown.Item>
                             <Link
-                              to={`${item.link}${e.link}`}
+                              to={`/${item.link}/${e.link}`}
                               style={{ color: "black", display: "block" }}
                               onClick={() => {
                                 handleUpdateSetActive(index);
@@ -68,7 +85,9 @@ export default function Header(props) {
                   return (
                     <Nav.Link
                       className={
-                        active == index ? "link-menu active" : "link-menu"
+                        context.index == index
+                          ? "link-menu active"
+                          : "link-menu"
                       }
                     >
                       <Link
@@ -77,10 +96,12 @@ export default function Header(props) {
                         }}
                         className="link-menu"
                         style={{
-                          color: `${active == index ? "green" : "white"}`,
+                          color: `${
+                            context.index == index ? "green" : "white"
+                          }`,
                           display: "block",
                         }}
-                        to={`${item.link}`}
+                        to={`/${item.link}`}
                       >
                         {item.content}
                       </Link>

@@ -9,6 +9,8 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import NotFoundPage from "./page/not_found_page/NotFoundPage";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ContainerView from "./components/view/ContainerView";
+import ContainerVideo from "./components/video/ContainerVideo";
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
                     return (
                       <Route
                         key={i}
-                        path={`${item.link}${e.link}`}
+                        path={`/${item.link}/${e.link}`}
                         element={e.component}
                       />
                     );
@@ -33,16 +35,23 @@ function App() {
               );
             } else {
               return (
-                <Route key={index} path={item.link} element={item.component} />
+                <Route
+                  key={index}
+                  path={`/${item.link}`}
+                  element={item.component}
+                />
               );
             }
           })}
+          <Route path="/view/:title" element={<ContainerView />} />
+          <Route path="/video/:title" element={<ContainerVideo />} />
+
           {/* <Route path="*" element={<Navigate to="/404" />} />
           <Route path="/404" element={<NotFoundPage />} /> */}
         </Routes>
       </div>
-
       <Footer></Footer>
+      <a href="tel:0939065777" id="callnowbutton"></a>
     </>
   );
 }
