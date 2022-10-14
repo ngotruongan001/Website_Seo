@@ -3,6 +3,7 @@ import { useState } from "react";
 import LetterComponent from "../../components/letter/LetterComponent";
 import AboutUs from "../../components/about_us/AboutUs";
 import Commit from "../../components/commit/Commit";
+import HoSoComponent from "../../components/ho_so/HoSoComponent";
 const array = [
   {
     title: "Thư ngỏ",
@@ -18,69 +19,10 @@ const array = [
   },
   {
     title: "Hồ sơ Năng lực",
-    component: <div style={{ height: 500 }}></div>,
+    component: <HoSoComponent />,
   },
 ];
 
-const arrayCard = [
-  {
-    image:
-      "http://thicongnhadanang.vn/wp-content/uploads/2020/10/M-e1623380019602.jpg",
-    title: "Nhà Minh Anh",
-    address: "Quãng Ngãi",
-  },
-  {
-    image: "http://thicongnhadanang.vn/wp-content/uploads/2020/10/TRUC.jpg",
-    title: "Nhà Chị Trúc",
-    address: "Đà Nẵng",
-  },
-  {
-    image:
-      "http://thicongnhadanang.vn/wp-content/uploads/2020/10/TR1-e1623397049668.jpg",
-    title: "NHÀ CHỊ TRINH",
-    address: "THANH HÓA",
-  },
-  {
-    image: "http://thicongnhadanang.vn/wp-content/uploads/2020/10/TAM.jpg",
-    title: "Nhà Minh Anh",
-    address: "Quãng Ngãi",
-  },
-  {
-    image:
-      "http://thicongnhadanang.vn/wp-content/uploads/2020/10/M-e1623380019602.jpg",
-    title: "Nhà Minh Anh",
-    address: "Quãng Ngãi",
-  },
-  {
-    image: "http://thicongnhadanang.vn/wp-content/uploads/2020/10/TRUC.jpg",
-    title: "Nhà Chị Trúc",
-    address: "Đà Nẵng",
-  },
-  {
-    image:
-      "http://thicongnhadanang.vn/wp-content/uploads/2020/10/TR1-e1623397049668.jpg",
-    title: "NHÀ CHỊ TRINH",
-    address: "THANH HÓA",
-  },
-  {
-    image:
-      "http://thicongnhadanang.vn/wp-content/uploads/2020/10/M-e1623380019602.jpg",
-    title: "Nhà Minh Anh",
-    address: "Quãng Ngãi",
-  },
-  {
-    image:
-      "http://thicongnhadanang.vn/wp-content/uploads/2020/10/M-e1623380019602.jpg",
-    title: "Nhà Minh Anh",
-    address: "Quãng Ngãi",
-  },
-  {
-    image:
-      "http://thicongnhadanang.vn/wp-content/uploads/2020/10/M-e1623380019602.jpg",
-    title: "Nhà Minh Anh",
-    address: "Quãng Ngãi",
-  },
-];
 export default function IntroducePage(props) {
   const [active, setActive] = useState(0);
   const handleUpdateSetActive = (index) => {

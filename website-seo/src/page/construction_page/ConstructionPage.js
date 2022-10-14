@@ -1,5 +1,6 @@
 import Container from "react-bootstrap/Container";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 const arrayCard = [
   {
@@ -17,13 +18,17 @@ export default function ConstructionPage(props) {
             return (
               <div className="card-construction">
                 <div className="image-card-construction">
-                  <img
-                    src="http://thicongnhadanang.vn/wp-content/uploads/2020/10/1-30-300x225.jpg"
-                    alt="image"
-                  />
+                  <Link to={`/view/Resort Mỹ An Huế`}>
+                    <img
+                      src="http://thicongnhadanang.vn/wp-content/uploads/2020/10/1-30-300x225.jpg"
+                      alt="image"
+                    />
+                  </Link>
                 </div>
                 <div className="title-card-construction">
-                  <h6>Resort Mỹ An Huế</h6>
+                  <Link to={`/view/Resort Mỹ An Huế`}>
+                    <h6>Resort Mỹ An Huế</h6>
+                  </Link>
                 </div>
               </div>
             );
