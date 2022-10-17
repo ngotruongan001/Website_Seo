@@ -4,6 +4,9 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import "./style.css";
 import Button from "react-bootstrap/Button";
+import callImage from "../../assets/icons/call.jpg";
+import mesImage from "../../assets/icons/mes.jpg";
+import zaloImage from "../../assets/icons/zalo.jpg";
 
 export default function ContactPage(props) {
   return (
@@ -56,16 +59,22 @@ export default function ContactPage(props) {
           <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
           <div className="icons">
             <a href="https://zalo.me/0939065777" target={"_blank"}>
-              <div className="icon-contact"></div>
+              <div className="icon-contact">
+                <img className="img-icon" src={zaloImage} />
+              </div>
             </a>
             <a
               href="https://www.facebook.com/messages/t/nguyenhaideco.vn"
               target={"_blank"}
             >
-              <div className="icon-contact"></div>
+              <div className="icon-contact">
+                <img className="img-icon" src={mesImage} />
+              </div>
             </a>
             <a href="tel:0939065777" target={"_blank"}>
-              <div className="icon-contact"></div>
+              <div className="icon-contact">
+                <img className="img-icon" src={callImage} />
+              </div>
             </a>
           </div>
         </Col>

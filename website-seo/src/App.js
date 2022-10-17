@@ -43,7 +43,7 @@ function App() {
               );
             }
           })}
-          <Route path="/view/:title" element={<ContainerView />} />
+          <Route path="/view/:view/:title" element={<ContainerView />} />
           <Route path="/video/:title" element={<ContainerVideo />} />
 
           {/* <Route path="*" element={<Navigate to="/404" />} />

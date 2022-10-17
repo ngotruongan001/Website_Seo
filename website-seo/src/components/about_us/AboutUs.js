@@ -1,5 +1,7 @@
 import Container from "react-bootstrap/Container";
 import "./style.css";
+import image from "../../assets/images/gioi_thieu/about-us.jpg";
+
 const letterDiscription = [
   [
     <b>Công ty TNHH MTV PCD Nguyễn Hải (Nguyễn Hải Deco)</b>,
@@ -31,7 +33,7 @@ export default function AboutUs(props) {
   return (
     <Container>
       <div className="image-banner">
-        <img src="http://thicongnhadanang.vn/wp-content/uploads/2021/04/Ảnh-Thi-công-xây-dựng.jpg" />
+        <img src={image} />
       </div>
       <div className="discription">
         {letterDiscription.map((e, index) => {

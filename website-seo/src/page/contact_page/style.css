@@ -57,3 +57,9 @@
   background-color: #9f9fa0;
   cursor: pointer;
 }
+
+img.img-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

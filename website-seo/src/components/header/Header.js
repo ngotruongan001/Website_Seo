@@ -9,6 +9,8 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { MenuContext } from "../../contexts/MenuContext";
 import { useContext, useLayoutEffect } from "react";
+import logo from "../../assets/images/logo/logo-chính-thức.png";
+
 export default function Header(props) {
   // const [active, setActive] = useState(1);
   const context = useContext(MenuContext);
@@ -42,10 +44,7 @@ export default function Header(props) {
       <Container>
         <Navbar.Brand>
           <Link to="/">
-            <img
-              className="logo"
-              src="http://thicongnhadanang.vn/wp-content/uploads/2020/10/logo-chính-thức.png"
-            />
+            <img className="logo" src={logo} />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />

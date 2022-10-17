@@ -2,6 +2,8 @@ import Container from "react-bootstrap/Container";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import { list_thicong } from "../../common/item_project";
+
 const arrayCard = [
   {
     image: "http://thicongnhadanang.vn/wp-content/uploads/2020/10/TAM.jpg",
@@ -14,20 +16,17 @@ export default function ConstructionPage(props) {
     <Container>
       <div className="body-construction">
         <div class="grid-construction">
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((e, index) => {
+          {list_thicong.map((e, index) => {
             return (
               <div className="card-construction">
                 <div className="image-card-construction">
-                  <Link to={`/view/Resort Mỹ An Huế`}>
-                    <img
-                      src="http://thicongnhadanang.vn/wp-content/uploads/2020/10/1-30-300x225.jpg"
-                      alt="image"
-                    />
+                  <Link to={`/view/Thi Công/${e.title}`}>
+                    <img src={e.image} alt={e.title} />
                   </Link>
                 </div>
                 <div className="title-card-construction">
-                  <Link to={`/view/Resort Mỹ An Huế`}>
-                    <h6>Resort Mỹ An Huế</h6>
+                  <Link to={`/view/Thi Công/${e.title}`}>
+                    <h6>{e.title}</h6>
                   </Link>
                 </div>
               </div>

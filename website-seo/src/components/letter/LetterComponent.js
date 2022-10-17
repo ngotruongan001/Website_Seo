@@ -1,5 +1,6 @@
 import Container from "react-bootstrap/Container";
 import "./style.css";
+import image from "../../assets/images/gioi_thieu/thu-ngo.jpg";
 const letterDiscription = [
   "Kính thưa Quý vị!",
   "Công ty TNHH MTV PCD Nguyễn Hải là một trong số những Đơn vị có thế mạnh trong lĩnh vực Tư vấn, Thiết kế và Thi công tại khu vực Đà Nẵng và miền Trung – Tây Nguyên.",
@@ -11,7 +12,7 @@ export default function LetterComponent(props) {
   return (
     <Container>
       <div className="image-banner">
-        <img src="http://thicongnhadanang.vn/wp-content/uploads/2021/04/Thi-công-nhà-trọn-gói-tại-Đà-Nẵng.jpg" />
+        <img src={image} />
       </div>
       <div className="discription">
         {letterDiscription.map((e, index) => {
